@@ -6,9 +6,12 @@ import com.github.deividst.api.repository.MovieRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,15 +20,14 @@ import java.util.List;
 @RequiredArgsConstructor
 public class InitialLoader implements CommandLineRunner {
 
-    private static final String CSV_FILE_PATH = "src/main/resources/Movielist.csv";
-
     private final MovieRepository movieRepository;
 
     @Override
     public void run(String... args) throws Exception {
         log.info("Iniciando processamento de carga inicial");
-        File csvFile = new File(CSV_FILE_PATH);
-        List<MovieDTO> movies = MovieCSVReader.read(csvFile);
+        InputStream is = getClass().getResourceAsStream("/Movielist.csv");
+
+        List<MovieDTO> movies = MovieCSVReader.read(is);
 
         List<Movie> movieEvents = new ArrayList<>();
 

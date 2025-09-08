@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  raspberry-awards-api:
+    image: raspberry-awards-analyzer-api
+    container_name: raspberry-awards-api
+    ports:
+      - "8080:8080"
