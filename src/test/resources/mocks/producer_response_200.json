@@ -1,0 +1,24 @@
+{
+  "min": [
+    {
+      "producer": "Will Ferrell, Adam McKay, Jimmy Miller and Clayton Townsend",
+      "interval": 1,
+      "previousWin": 2018,
+      "fallowingWin": 2019
+    },
+    {
+      "producer": "Gary Barber, Michael DeLuca and Mike Myers",
+      "interval": 1,
+      "previousWin": 2008,
+      "fallowingWin": 2009
+    }
+  ],
+  "max": [
+    {
+      "producer": "Bo Derek",
+      "interval": 6,
+      "previousWin": 1984,
+      "fallowingWin": 1990
+    }
+  ]
+}
