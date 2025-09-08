@@ -17,19 +17,17 @@ public class Movie {
     @Column(name = "ID")
     private Long id;
 
+    @Column(name = "EVENT_YEAR")
+    private Integer year;
+
     @Column(name = "TITLE")
     private String title;
 
     @Column(name = "STUDIO")
     private String studio;
 
-    @ManyToOne
-    @JoinColumn(name = "producer_id")
-    private Producer producer;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "award_event_id")
-    private AwardEvent awardEvent;
+    @Column(name = "PRODUCER")
+    private String producer;
 
     @Column(name = "WINNER")
     private boolean winner;
